@@ -1,0 +1,15 @@
+/*
+Theme Name: Refact Starter
+Author: Refact
+Author URI: https://refact.co/
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+Tested up to: 6.0
+License: GPL version 2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0
+Text Domain: refact-starter
+Tags: full-site-editing, editor-style, block-styles, block-patterns
+*/
+
+/* Don't overwrite this file. Compile "/src/styles/main.scss" to "/assets/styles/main.css" */

@@ -1,0 +1,26 @@
+{
+  "name": "acf/copyright",
+  "title": "Copyright Text",
+  "description": "Display the copyright text.",
+  "category": "refact-starter",
+  "icon": "info-outline",
+  "keywords": [
+    "template part"
+  ],
+  "version": "1.0.0",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "copyright.php"
+  },
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "alignContent": false,
+    "customClassName": false,
+    "color": {
+      "text": true,
+      "link": false,
+      "background": false
+    }
+  }
+}

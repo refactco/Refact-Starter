@@ -1,0 +1,33 @@
+.wp-block-post-content {
+  p {
+    margin: 0 0 1.5em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    line-height: 1;
+    margin: 0.4444em 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h1,h2,h3 {
+    margin-top: 0.75em;
+  }
+
+  h5,h6 {
+    line-height: 1.2;
+  }
+
+  a {
+    transition: all 0.2s ease-in-out;
+  }
+}

@@ -1,0 +1,9 @@
+.c-section{
+  color: red;
+}
+.c-s__ss-ss{
+  color: blue;
+  @include mq(lg){
+    color: green;
+  }
+}

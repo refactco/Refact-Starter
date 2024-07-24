@@ -1,0 +1,18 @@
+.wp-block-group {
+  &.has-background {
+    padding: 1rem 0;
+
+    main > & {
+      margin-left: -1rem;
+      margin-right: -1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  &.alignwide {
+    max-width: var(--wp--style--global--wide-size);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

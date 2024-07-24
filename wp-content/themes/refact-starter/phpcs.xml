@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<ruleset name="RefactStarter with WordPress Theme Standards">
+    <description>PHP Coding Standards including WordPress Theme Standards</description>
+
+    <!-- File Inclusions -->
+    <file>.</file>
+    <!-- Exclude Patterns -->
+    <exclude-pattern>*.js</exclude-pattern>
+    <exclude-pattern>*.scss</exclude-pattern>
+    <exclude-pattern>*.css</exclude-pattern>
+    <exclude-pattern>/vendor/*</exclude-pattern>
+    <exclude-pattern>/node_modules/*</exclude-pattern>
+
+    <!-- Arguments -->
+    <arg value="ps"/>
+    <arg name="basepath" value="./"/>
+    <arg name="parallel" value="8"/>
+    <arg name="extensions" value="php"/>
+
+    <!-- Rules -->
+    <rule ref="WordPress-Core"/>
+    <rule ref="WordPress-Docs"/>
+    <rule ref="WordPress-Extra"/>
+    <rule ref="WordPress">
+        <!-- Exclude specific rule -->
+        <exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
+    </rule>
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array" value="_s"/>
+        </properties>
+    </rule>
+    <rule ref="WordPress.Files.FileName">
+        <properties>
+            <property name="is_theme" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="WordPress.Arrays.MultipleStatementAlignment">
+        <properties>
+            <property name="exact" value="false"/>
+            <property name="alignMultilineItems" value="!=100"/>
+            <property name="ignoreNewlines" value="false"/>
+        </properties>
+    </rule>
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+        <properties>
+            <property name="prefixes" type="array" value="_s" />
+        </properties>
+    </rule>
+    <config name="minimum_supported_wp_version" value="4.5"/>
+    <config name="testVersion" value="5.6-"/>
+    <rule ref="PHPCompatibilityWP"/>
+
+</ruleset>

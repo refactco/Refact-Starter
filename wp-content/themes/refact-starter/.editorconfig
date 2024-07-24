@@ -1,0 +1,30 @@
+# EditorConfig helps maintain consistent coding styles between different editors and IDEs
+# More information at http://editorconfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = tab
+
+# Use spaces for JSON and YAML files, with an indentation of 2 spaces
+[{package.json,*.yml}]
+indent_style = space
+indent_size = 2
+
+# Windows-style newlines for specific files
+[{*.txt,wp-config-sample.php}]
+end_of_line = crlf
+
+# Special configurations for Markdown files
+[*.md]
+trim_trailing_whitespace = false
+
+# JavaScript, SCSS, and PHP files with specific rules
+[*.{js,scss,php}]
+indent_style = tab

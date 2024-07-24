@@ -1,0 +1,38 @@
+.acf-block-has-accordion > .acf-label,
+.acf-block-has-accordion .acf-table thead,
+.acf-block-no-label > .acf-label,
+.acf-block-no-thead .acf-table thead {
+  display: none;
+}
+
+.acf-repeater-small .acf-row .acf-row-handle {
+  padding: 8px 2px;
+}
+.acf-repeater-small .acf-fields > .acf-field {
+  border: none;
+  padding: 4px 6px;
+}
+
+.acf-block-fields .acf-gallery {
+  height: auto !important;
+  border: none;
+}
+.acf-block-fields .acf-gallery .acf-gallery-main {
+  position: relative;
+}
+.acf-block-fields .acf-gallery .acf-gallery-attachments {
+  margin: -5px -5px 5px -5px;
+  padding: 0;
+  position: relative;
+}
+.acf-block-fields .acf-gallery .acf-gallery-toolbar {
+  padding: 0;
+  border: none;
+  position: relative;
+}
+.acf-block-fields .acf-fr {
+  display: none;
+}
+.acf-block-fields .acf-gallery-side {
+  border: none;
+}
