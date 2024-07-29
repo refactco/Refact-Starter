@@ -12,8 +12,8 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 indent_style = tab
 
-# Use spaces for JSON and YAML files, with an indentation of 2 spaces
-[{package.json,*.yml}]
+# 2 space indentation for HTML, CSS, JS, JSON, YAML, Markdown, and SCSS
+[*.{html,css,js,json,yml,md,scss}]
 indent_style = space
 indent_size = 2
 
@@ -25,6 +25,10 @@ end_of_line = crlf
 [*.md]
 trim_trailing_whitespace = false
 
-# JavaScript, SCSS, and PHP files with specific rules
-[*.{js,scss,php}]
+# Tab indentation for PHP
+[*.php]
 indent_style = tab
+
+# Use double quotes in JSON
+[*.json]
+quote_type = double
