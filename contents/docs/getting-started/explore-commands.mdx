@@ -1,0 +1,38 @@
+---
+title: Explore Commands
+description: Linting and Versioning Guide
+---
+
+To ensure code quality and adherence to coding standards, use the following commands:
+
+## Linting
+**JavaScript Files:**
+Run this command to lint your JavaScript files:
+  ```sh
+  npm run lint
+  ```
+**CSS/SASS Files:**
+To lint your CSS or SASS files, execute:
+  ```sh
+  npm run lint:css
+  ```
+**PHP Code Standards:**
+To check your PHP code for standard compliance, use:
+  ```sh
+  npm run phpcs
+  ```
+**Automatic PHP Fixes:**
+For automatically fixing PHP code standard issues, run:
+  ```sh
+  npm run phpcbf
+  ```
+## Versioning
+
+The `update-version.js` script checks for modifications in SCSS files and updates version numbers in related JSON and PHP files. Run the script manually if needed:
+```sh
+npm run updateVersion
+```
+
+#### Additional Notes
+- The script uses a memory file (lastModifiedMemory.json) to store the last modification time. Ensure this file is writable.
+- Each block should have a block.json, index.scss, and index.asset.php file for the script to work correctly.

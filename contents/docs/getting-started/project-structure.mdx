@@ -1,0 +1,256 @@
+---
+title: Project Structure
+description: 
+---
+
+## Scafolding
+```sh
+├── README.md
+├── acf-blocks
+|  └── copyright
+|     ├── block.json
+|     ├── copyright.php
+|     ├── index.asset.php
+|     ├── index.css
+|     ├── index.scss
+|     └── lastModified.txt
+├── acf-json
+|  ├── group_65b1557cec047.json
+|  └── index.php
+├── alm_templates
+|  └── default.php
+├── assets
+|  ├── fonts
+|  |  └── Inter.woff2
+|  ├── images
+|  |  └── logo.png
+|  ├── scripts
+|  |  ├── flickity.js
+|  |  └── main.js
+|  └── styles
+|     ├── admin.css
+|     ├── button.css
+|     ├── flickity.css
+|     └── style.css
+├── build
+|  └── blocks
+|     ├── footer
+|     |  ├── block.json
+|     |  ├── index-rtl.css
+|     |  ├── index.asset.php
+|     |  ├── index.css
+|     |  ├── index.js
+|     |  ├── render.php
+|     |  ├── style-index-rtl.css
+|     |  ├── style-index.css
+|     |  ├── view.asset.php
+|     |  └── view.js
+|     └── header
+|        ├── block.json
+|        ├── index-rtl.css
+|        ├── index.asset.php
+|        ├── index.css
+|        ├── index.js
+|        ├── render.php
+|        ├── style-index-rtl.css
+|        ├── style-index.css
+|        ├── view.asset.php
+|        └── view.js
+├── composer.json
+├── composer.lock
+├── eslint.config.mjs
+├── functions.php
+├── inc
+|  ├── acf.php
+|  ├── hooks.php
+|  ├── register-block-styles.php
+|  └── style-hooks.php
+├── index.php
+├── languages
+|  └── readme.txt
+├── lastModifiedMemory.json
+├── package-lock.json
+├── package.json
+├── parts
+|  ├── footer.html
+|  └── header.html
+├── patterns
+|  └── footer-logo.php
+├── phpcs.xml
+├── screenshot.png
+├── src
+|  ├── blocks
+|  |  ├── footer
+|  |  |  ├── block.json
+|  |  |  ├── edit.js
+|  |  |  ├── editor.scss
+|  |  |  ├── index.js
+|  |  |  ├── render.php
+|  |  |  ├── style.scss
+|  |  |  └── view.js
+|  |  └── header
+|  |     ├── block.json
+|  |     ├── edit.js
+|  |     ├── editor.scss
+|  |     ├── index.js
+|  |     ├── render.php
+|  |     ├── style.scss
+|  |     └── view.js
+|  ├── scripts
+|  |  └── main.js
+|  └── styles
+|     ├── blocks
+|     |  ├── group.scss
+|     |  ├── post-author.scss
+|     |  ├── post-content.scss
+|     |  ├── post-terms.scss
+|     |  ├── search.scss
+|     |  └── separator.scss
+|     ├── components
+|     |  └── section.scss
+|     ├── core
+|     |  └── button.scss
+|     ├── elements
+|     |  └── defaults.scss
+|     ├── main.scss
+|     ├── partials
+|     |  ├── footer.scss
+|     |  └── header.scss
+|     └── settings
+|        └── mq.scss
+├── style.css
+├── stylelint.config.js
+├── styles
+|  └── light.json
+├── templates
+|  ├── 404.html
+|  ├── archive.html
+|  ├── author.html
+|  ├── builder.html
+|  ├── index.html
+|  ├── page.html
+|  ├── search.html
+|  └── single.html
+├── theme.json
+├── update-version.js
+├── vendor
+├── webpack.blocks.config.js
+└── webpack.config.js
+```
+
+## Directories Definition
+
+### acf-blocks
+
+The acf-blocks directory houses custom blocks created with the Advanced Custom Fields (ACF) plugin, containing all necessary PHP, JS, and CSS files for each block.
+
+### acf-json
+
+This directory contains local JSON files used by the Advanced Custom Fields (ACF) plugin. These files store field group settings and configurations, allowing for version control and easier management of ACF fields.
+
+
+### alm_templates
+
+The alm_templates directory houses the repeater templates used by the Ajax Load More plugin. This directory is responsible for storing the specific templates that determine how the content is displayed when loaded via Ajax.
+
+
+### assets
+
+All the assets required by the theme, such as CSS stylesheets, JavaScript files, images, and fonts, can be found in this directory. It serves as a central location for managing and organizing these resources.
+
+
+### inc
+
+The inc directory houses PHP functions that are utilized throughout the theme. This directory provides a centralized location for managing and organizing the theme's PHP code.
+
+
+### languages
+
+The languages directory is used for localizing and translating the theme. It contains language files that allow you to provide translations for different languages, making your theme accessible to a wider audience.
+
+
+### parts
+
+The parts directory stores reusable code snippets and partial templates that can be utilized across different sections of your theme. It provides a convenient way to manage and reuse common elements, such as headers, footers, or sidebars.
+
+
+### patterns
+
+The patterns directory is where you can store reusable block patterns for the WordPress editor. These patterns allow you to define pre-designed content structures that can be easily inserted and customized within the editor.
+
+
+### src
+
+The src directory typically holds the source files of your theme, such as Sass or JavaScript files. It's where you can write and organize the original source code before it gets compiled or processed into the final theme assets.
+
+### src/blocks
+
+The blocks directory houses custom Gutenberg blocks, containing all necessary PHP, JS, and CSS files for each block to ensure proper functionality and styling.
+
+### styles
+
+The styles directory facilitates style switching for your theme. It can contain several JSON files that define different theme styles, allowing users to choose their preferred visual appearance.
+
+
+### templates
+
+The templates directory stores individual page templates that determine the presentation and layout of specific pages or post types. You can create custom templates or modify existing ones within this directory to control the visual structure of your theme's pages.
+
+
+## File Descriptions
+
+### webpack.config.js
+
+Main Webpack configuration file for bundling JavaScript and CSS.
+- Defines entry points, output configuration, and module rules.
+- Uses plugins like MiniCssExtractPlugin, ESLintPlugin, and StylelintPlugin.
+
+### webpack.blocks.config.js
+
+Extends the default Webpack configuration provided by `@wordpress/scripts`.
+- Used to add or override configuration options specific to your project.
+
+### composer.json
+
+Contains PHP dependencies and configuration for PHP CodeSniffer.
+- **require-dev**: Lists development dependencies such as PHP CodeSniffer and WordPress Coding Standards.
+- **config**: Allows specific plugins to be used.
+
+### eslint.config.mjs
+
+Configuration for ESLint, specifying global variables and recommended rules.
+- **languageOptions**: Defines global variables for the browser.
+- **jsConfigs.recommended**: Includes recommended ESLint configurations.
+
+### stylelint.config.js
+
+Configuration for Stylelint, enforcing CSS/SASS coding standards.
+- Extends the recommended configuration.
+- Defines custom rules, such as BEM naming conventions and ignoring certain at-rules.
+
+### phpcs.xml
+
+Defines PHP CodeSniffer rules and file exclusions.
+- Includes WordPress-specific rules.
+- Excludes non-PHP files and certain directories.
+
+### package.json
+
+Lists Node.js dependencies and defines scripts for various tasks.
+- **scripts**: Contains commands for building, linting, and running the project.
+- **devDependencies** and **dependencies**: Lists required packages for development and production.
+
+
+### update-version.js
+
+Script to automatically update version numbers in block JSON and PHP asset files when SCSS files are modified.
+- Checks modification times of files.
+- Updates version numbers in corresponding JSON and PHP files.
+
+### theme.json
+
+Defines global styles and settings for the WordPress theme.
+- Specifies color palettes, typography, spacing, and other settings.
+- Defines template parts and custom templates.
+
+

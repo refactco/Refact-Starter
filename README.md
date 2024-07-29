@@ -1,28 +1,52 @@
-# Refact Starter Theme
+## Documentation Template
 
-Welcome to the Refact Starter Theme repository. This theme is designed for WordPress Full Site Editing (FSE) with a focus on modern development workflows.
+This feature-packed documentation template, built with Next.js, offers a sleek and responsive design, perfect for all your project documentation needs.
 
-## Quick Start
+<br/>
 
-Run inside local WP install's theme folder E.g. `/wp.local/wp-content/themes/your-theme` directory.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-1. **Install dependencies:**
-    ```sh
-   npm install
-   composer install
-    ```
+## Getting Started
 
-2. **Start the project:**
-    ```sh
-   npm run start
-    ```
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 
-## Documentation
+## Features
 
-For detailed documentation, please refer to the [README.md](wp-content/themes/refact-starter/README.md) file.
-
-
-## Support
-
-If you have any questions or issues, please open an issue on GitHub.
+- MDX supported
+- Syntax highlighting
+- Table of contents
+- Pagination
+- Search
+- Code line highlight & code title
+- Static site generation
+- Custom components
+- Light mode & dark mode
+- Code Switcher
+- Code copy
+- Table of content observer highlight
