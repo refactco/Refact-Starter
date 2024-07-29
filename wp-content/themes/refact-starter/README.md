@@ -73,6 +73,11 @@ The `update-version.js` script checks for modifications in SCSS files and update
 ```sh
 npm run updateVersion
 ```
+
+#### Additional Notes
+- The script uses a memory file (lastModifiedMemory.json) to store the last modification time. Ensure this file is writable.
+- Each block should have a block.json, index.scss, and index.asset.php file for the script to work correctly.
+
 ## Gutenberg Blocks
 We have another webpack configuration for building Gutenberg blocks, which is located in `webpack.blocks.config.js`. if you want to start developing or building blocks you can use the following commands.
 
@@ -84,6 +89,66 @@ To start buillding blocks:
 ```sh
 npm run build:blocks
 ```
+
+## Performance Matters
+We define a method to automate the enqueuing of stylesheets for specific Gutenberg blocks in WordPress. By using the render_block filter, we can conditionally enqueue styles based on the type of block being rendered. You can find the code in the `/wp-content/themes/refact-starter/inc/style-hooks.php` file.
+
+```php
+function refact_custom_block_styles( string $block_content, array $block ): string {
+  $theme_version = defined( 'THEME_VERSION' ) ? THEME_VERSION : '1.0.0';
+
+  // Array of block names and corresponding CSS file names
+  $block_styles = array(
+    'core/button' => 'button.css',
+
+    // Add more block styles here
+    // 'block/name' => 'filename.css',
+  );
+
+  // Check if the block is in the array
+  if ( array_key_exists( $block['blockName'], $block_styles ) ) {
+    $style_file = $block_styles[$block['blockName']];
+    wp_enqueue_style( 'refact-' . str_replace( '/', '-', $block['blockName'] ) . '-styles', get_theme_file_uri( "assets/styles/$style_file" ), array(), $theme_version );
+  }
+
+  return $block_content;
+}
+
+add_filter( 'render_block', 'refact_custom_block_styles', 10, 2 );
+```
+As illustrated in the code above, we check if the `core/button` block exists on the page and then enqueue the `button.css` file. You can add more conditions for different blocks by following the same pattern.
+
+### Webpack configuration for this feature
+You need to add separate **entries** and **outputs** for each style block you want to build. An example can be found in the `webpack.config.js` file.
+
+```js
+entry: {
+    /*main: './src/scripts/main.js',
+    style: './src/styles/main.scss',*/
+    button: './src/styles/core/button.scss',
+   /* ...blockEntries.js, 
+    ...blockEntries.scss */
+  },
+  /*... Other configurations*/
+  new MiniCssExtractPlugin({
+      filename: (pathData) => {
+        /*const name = pathData.chunk?.name;
+        if (!name) {
+          throw new Error('Chunk name is undefined');
+        }
+        if (name === 'style') {
+          return 'assets/styles/[name].css';
+        }*/
+        if (name === 'button') {
+          return 'assets/styles/[name].css';
+        }/*
+        if (name.startsWith('acf-blocks/') && name.endsWith('.scss')) {
+          return name.replace('acf-blocks/', 'acf-blocks/').replace('.scss', '.css');
+        }
+        return 'assets/styles/[name].css'; // Default case to handle unexpected names*/
+      }
+    }), 
+  ```
 
 
 ## File Descriptions

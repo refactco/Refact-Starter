@@ -82,3 +82,6 @@ require_once get_theme_file_path( 'inc/hooks.php' );
 
 // Advanced Custom Fields Functions
 require_once get_theme_file_path( 'inc/acf.php' );
+
+// Style Hooks
+require_once get_theme_file_path( 'inc/style-hooks.php' );

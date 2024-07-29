@@ -68,31 +68,6 @@
 							]
 						}
 					]
-				},
-				{
-					"fontFamily": "Lato, sans-serif",
-					"name": "Lato",
-					"slug": "lato",
-					"fontFace": [
-						{
-							"fontFamily": "Lato",
-							"fontWeight": "400",
-							"fontStyle": "normal",
-							"fontDisplay": "swap",
-							"src": [
-								"file:./assets/fonts/Lato-Normal.woff2"
-							]
-						},
-						{
-							"fontFamily": "Lato",
-							"fontWeight": "700",
-							"fontStyle": "normal",
-							"fontDisplay": "swap",
-							"src": [
-								"file:./assets/fonts/Lato-Bold.woff2"
-							]
-						}
-					]
 				}
 			],
 			"fontSizes": [
@@ -217,7 +192,7 @@
 		},
 		"typography": {
 			"fontSize": "var(--wp--preset--font-size--body)",
-			"fontFamily": "var(--wp--preset--font-family--lato)",
+			"fontFamily": "var(--wp--preset--font-family--inter)",
 			"lineHeight": "1.4"
 		},
 		"elements": {
@@ -251,14 +226,14 @@
 			},
 			"h5": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--lato)",
+					"fontFamily": "var(--wp--preset--font-family--inter)",
 					"fontSize": "var(--wp--preset--font-size--heading-5)",
 					"fontWeight": "700"
 				}
 			},
 			"h6": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--lato)",
+					"fontFamily": "var(--wp--preset--font-family--inter)",
 					"fontSize": "var(--wp--preset--font-size--heading-6)",
 					"fontWeight": "700"
 				}

@@ -32,6 +32,7 @@ module.exports = {
   entry: {
     main: './src/scripts/main.js',
     style: './src/styles/main.scss',
+    button: './src/styles/core/button.scss',
     ...blockEntries.js,
     ...blockEntries.scss
   },
@@ -109,6 +110,9 @@ module.exports = {
           throw new Error('Chunk name is undefined');
         }
         if (name === 'style') {
+          return 'assets/styles/[name].css';
+        }
+        if (name === 'button') {
           return 'assets/styles/[name].css';
         }
         if (name.startsWith('acf-blocks/') && name.endsWith('.scss')) {
