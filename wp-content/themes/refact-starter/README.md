@@ -34,13 +34,9 @@ Refact Starter Theme is a WordPress Full Site Editing (FSE) theme designed for r
 
 ## Getting Started
 
-1. **Clone the repository:**
-  ```sh
-   git clone https://github.com/refactco/Refact-Starter.git
-   cd Refact-Starter
-   ```
+Run inside local WP install's theme folder E.g. `/wp.local/wp-content/themes/your-theme` directory.
 
-2. **Install dependencies:**
+ **Install dependencies:**
   ```sh
    npm install
    composer install

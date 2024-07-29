@@ -4,19 +4,15 @@ Welcome to the Refact Starter Theme repository. This theme is designed for WordP
 
 ## Quick Start
 
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/refactco/Refact-Starter.git
-   cd Refact-Starter
-   ```
+Run inside local WP install's theme folder E.g. `/wp.local/wp-content/themes/your-theme` directory.
 
-2. **Install dependencies:**
+1. **Install dependencies:**
     ```sh
    npm install
    composer install
     ```
 
-3. **Start the project:**
+2. **Start the project:**
     ```sh
    npm run start
     ```
