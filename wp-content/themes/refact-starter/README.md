@@ -11,6 +11,8 @@ Refact Starter Theme is a WordPress Full Site Editing (FSE) theme designed for r
 - [Linting](#linting)
 - [Versioning](#versioning)
 - [Gutenberg Blocks](#gutenberg-blocks)
+- [Performance Matters](#performance-matters)
+  - [Webpack configuration for this feature](#webpack-configuration-for-this-feature)
 - [File Descriptions](#file-descriptions)
   - [webpack.config.js](#webpackconfigjs)
   - [webpack.blocks.config.js](#webpackblocksconfigjs)
