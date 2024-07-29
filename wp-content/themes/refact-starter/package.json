@@ -9,9 +9,9 @@
     "lint:css": "stylelint 'src/styles/**/*.scss' 'acf-blocks/**/*.scss'",
     "phpcs": "vendor/bin/phpcs",
     "phpcbf": "vendor/bin/phpcbf",
-    "build:blocks": "wp-scripts build --config webpack.blocks.config.js",
     "updateVersion": "node update-version.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:blocks": "wp-scripts start --config webpack.blocks.config.js",
+    "build:blocks": "wp-scripts build --config webpack.blocks.config.js"
   },
   "repository": {
     "type": "git",
