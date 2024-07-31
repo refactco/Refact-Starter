@@ -7,7 +7,10 @@
 defined( 'ABSPATH' ) || exit;
 
 
-function refact_custom_block_styles( string $block_content, array $block ): string {
+/**
+ * Add custom block styles
+ */
+function refact_custom_block_styles() {
   $theme_version = defined( 'THEME_VERSION' ) ? THEME_VERSION : '1.0.0';
 
   // Array of block names and corresponding CSS file names
@@ -18,13 +21,14 @@ function refact_custom_block_styles( string $block_content, array $block ): stri
     // 'block/name' => 'filename.css',
   );
 
-  // Check if the block is in the array
-  if ( array_key_exists( $block['blockName'], $block_styles ) ) {
-    $style_file = $block_styles[$block['blockName']];
-    wp_enqueue_style( 'refact-' . str_replace( '/', '-', $block['blockName'] ) . '-styles', get_theme_file_uri( "assets/styles/$style_file" ), array(), $theme_version );
+  foreach ( $block_styles as $block_name => $style_file ) {
+    $args = array(
+      'handle'  => 'refact-starter-' . str_replace( '/', '-', $block_name ),
+      'src'     => get_theme_file_uri( "assets/styles/blocks/$style_file" ),
+      'ver'     => $theme_version,
+      'path'    => get_theme_file_path( "assets/styles/blocks/$style_file" ),
+    );
+    wp_enqueue_block_style( $block_name, $args );
   }
-
-  return $block_content;
 }
-
-add_filter( 'render_block', 'refact_custom_block_styles', 10, 2 );
+add_filter( 'after_setup_theme', 'refact_custom_block_styles' );
