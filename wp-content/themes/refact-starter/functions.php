@@ -75,7 +75,7 @@ add_action( 'admin_enqueue_scripts', 'refact_starter_admin_assets' );
 
 
 // Block style
-require_once get_theme_file_path( 'inc/register-block-styles.php' );
+require_once get_theme_file_path( 'inc/block-styles.php' );
 
 // WP Hooks
 require_once get_theme_file_path( 'inc/hooks.php' );
