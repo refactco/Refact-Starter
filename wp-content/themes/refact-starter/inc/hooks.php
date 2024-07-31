@@ -8,17 +8,11 @@ defined( 'ABSPATH' ) || exit;
 
 /*
 * Register the blocks
-*
-* @return void
 */
 function refact_starter_register_blocks() {
-	$blocks = array(
-		'footer',
-		'header',
-	);
-	$template_directory = get_template_directory();
+	$blocks = glob( get_template_directory() . '/build/blocks/*', GLOB_ONLYDIR );
 	foreach ( $blocks as $block ) {
-		register_block_type( $template_directory . "/build/blocks/$block" );
+		register_block_type( $block );
 	}
 }
 add_action( 'init', 'refact_starter_register_blocks' );
