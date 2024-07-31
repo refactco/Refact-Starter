@@ -4,9 +4,25 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+const { log } = require('console');
 
 
-function getBlockEntries(dir) {
+// Function to get SCSS entries from src/styles/blocks directory
+function blocksScssEntries() {
+  const dir = './src/styles/blocks';
+  const entries = {};
+  fs.readdirSync(dir).forEach(file => {
+    const filePath = path.join(dir, file);
+    if (fs.lstatSync(filePath).isFile() && file.endsWith('.scss')) {
+      entries[`src/styles/blocks/${file}`] = path.resolve(__dirname, filePath);
+    }
+  });
+  return entries;
+}
+
+// Function to get JS and SCSS entries from acf-blocks directory
+function acfBlocksEntries() {
+  const dir = './acf-blocks';
   const entries = { js: {}, scss: {} };
   fs.readdirSync(dir).forEach(block => {
     const blockPath = path.join(dir, block);
@@ -22,7 +38,9 @@ function getBlockEntries(dir) {
   return entries;
 }
 
-const blockEntries = getBlockEntries('./acf-blocks');
+const blocksScss = blocksScssEntries();
+const acfBlocks = acfBlocksEntries();
+
 
 module.exports = {
   watch: true,
@@ -32,9 +50,9 @@ module.exports = {
   entry: {
     main: './src/scripts/main.js',
     style: './src/styles/main.scss',
-    button: './src/styles/core/button.scss',
-    ...blockEntries.js,
-    ...blockEntries.scss
+    ...blocksScss,
+    ...acfBlocks.js,
+    ...acfBlocks.scss
   },
   output: {
     filename: (pathData) => {
@@ -45,14 +63,14 @@ module.exports = {
       if (name.startsWith('acf-blocks/') && name.endsWith('.js')) {
         return name.replace('acf-blocks/', 'acf-blocks/').replace('index.js', 'index.min.js');
       }
-      if(name === 'main') {
+      if (name === 'main') {
         return 'assets/scripts/[name].js';
       }
       return 'assets/scripts/[name].js'; 
     },
     path: path.resolve(__dirname, '.'),
     publicPath: '/'
-  },  
+  },
   module: {
     rules: [
       {
@@ -112,11 +130,11 @@ module.exports = {
         if (name === 'style') {
           return 'assets/styles/[name].css';
         }
-        if (name === 'button') {
-          return 'assets/styles/[name].css';
-        }
         if (name.startsWith('acf-blocks/') && name.endsWith('.scss')) {
           return name.replace('acf-blocks/', 'acf-blocks/').replace('.scss', '.css');
+        }
+        if (name.startsWith('src/styles/blocks/')) {
+          return name.replace('src/styles/', 'assets/styles/').replace('.scss', '.css');
         }
         return 'assets/styles/[name].css'; // Default case to handle unexpected names
       }

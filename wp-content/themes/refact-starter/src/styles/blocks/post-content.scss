@@ -1,3 +1,6 @@
+@import '../../../node_modules/sass-mq/_mq.import.scss';
+@import '../settings/mq';
+
 .wp-block-post-content {
   p {
     margin: 0 0 1.5em;

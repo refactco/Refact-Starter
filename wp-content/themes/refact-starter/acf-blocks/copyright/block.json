@@ -22,5 +22,14 @@
       "link": false,
       "background": false
     }
-  }
+  },
+  "script": [
+    "file:./index.min.js"
+  ],
+  "style": [
+    "file:./index.css"
+  ],
+  "editorStyle": [
+    "file:./editor.css"
+  ]
 }

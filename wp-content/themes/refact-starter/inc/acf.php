@@ -42,12 +42,9 @@ add_filter( 'block_categories_all', 'refact_starter_block_categories', 10, 2 );
  * Register ACF Blocks
  */
 function refact_starter_register_acf_blocks() {
-	$acf_blocks = array(
-		'copyright',
-	);
-	$template_directory = get_template_directory();
-	foreach ( $acf_blocks as $block ) {
-		register_block_type( $template_directory . "/acf-blocks/$block" );
+	$acf_blocks = glob( get_template_directory() . '/acf-blocks/*', GLOB_ONLYDIR );
+	foreach ( $acf_blocks as $acf_block ) {
+		register_block_type( $acf_block );
 	}
 }
 add_action( 'init', 'refact_starter_register_acf_blocks' );
