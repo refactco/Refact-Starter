@@ -1,3 +1,6 @@
+@import '../../../node_modules/sass-mq/_mq.import.scss';
+@import '../settings/mq';
+
 .wp-block-group {
   &.has-background {
     padding: 1rem 0;

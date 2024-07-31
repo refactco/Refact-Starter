@@ -1,0 +1,1 @@
+.wp-block-separator{margin:1rem auto;max-width:var(--wp--style--global--wide-size)}@media(min-width: 62em){.wp-block-separator{margin:2.5rem auto}}.wp-block-separator.has-background:not(.is-style-dots){height:2px}.wp-block-separator.is-style-dots::before{content:"";display:block;padding:0;border-bottom:1px dashed currentcolor}
