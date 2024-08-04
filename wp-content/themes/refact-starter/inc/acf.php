@@ -42,9 +42,18 @@ add_filter( 'block_categories_all', 'refact_starter_block_categories', 10, 2 );
  * Register ACF Blocks
  */
 function refact_starter_register_acf_blocks() {
-	$acf_blocks = glob( get_template_directory() . '/acf-blocks/*', GLOB_ONLYDIR );
-	foreach ( $acf_blocks as $acf_block ) {
-		register_block_type( $acf_block );
+	// Attempt to retrieve ACF block folders from the cache
+	$acf_block_folders = wp_cache_get( 'acf_block_folders', 'refact_starter' );
+
+	// If ACF block folders are not cached, retrieve them from the file system and cache the result
+	if ( false === $acf_block_folders ) {
+		$acf_block_folders = glob( get_template_directory() . '/acf-blocks/*', GLOB_ONLYDIR );
+		wp_cache_set( 'acf_block_folders', $acf_block_folders, 'refact_starter', WEEK_IN_SECONDS );
+	}
+
+	// Register each ACF block found in the ACF block folders
+	foreach ( $acf_block_folders as $acf_block_folder ) {
+		register_block_type( $acf_block_folder );
 	}
 }
 add_action( 'init', 'refact_starter_register_acf_blocks' );
