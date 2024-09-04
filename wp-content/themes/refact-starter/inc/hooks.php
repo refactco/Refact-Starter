@@ -22,7 +22,7 @@ function refact_starter_register_blocks() {
 		$block_folders = isset( $transient_data['block_folders'] ) ? $transient_data['block_folders'] : array();
 	} else {
 		// If no cached data, retrieve block folders
-		$block_folders = glob( get_template_directory() . '/build/blocks/*', GLOB_ONLYDIR );
+		$block_folders = glob( get_template_directory() . '/build/blocks/*', GLOB_ONLYDIR | GLOB_NOSORT );
 
 		// Update transient data
 		$transient_data = array(
