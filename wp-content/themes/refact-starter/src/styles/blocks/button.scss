@@ -1,5 +1,4 @@
-@import '../../../node_modules/sass-mq/_mq.import.scss';
-@import '../settings/mq';
+@use '../settings/mq.scss' as *;
 
 .wp-block-button__link svg {
 	vertical-align: middle;

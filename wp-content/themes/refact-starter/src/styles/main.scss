@@ -1,10 +1,6 @@
-@import '../../node_modules/sass-mq/_mq.import.scss';
+@use 'elements/defaults.scss';
 
-@import 'settings/mq';
+@use 'components/section.scss';
 
-@import 'elements/defaults.scss';
-
-@import 'components/section.scss';
-
-@import 'partials/header.scss';
-@import 'partials/footer.scss';
+@use 'partials/header.scss';
+@use 'partials/footer.scss';

@@ -1,2 +1,1 @@
-@import '../../node_modules/sass-mq/_mq.import.scss';
-@import '../../src/styles/settings/mq';
+@use '../../src/styles/settings/mq.scss' as *;
